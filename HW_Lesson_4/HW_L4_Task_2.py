@@ -1,36 +1,21 @@
-lst = ["FirstItem", "FriendsList", "MyTuple", "Anotherword", "word", "Another_dict"]
+lst = ["FirstItem", "FriendsList", "My_Tuple", "AnotherWord_FromougterScope", "word", "Another_Dict", "MyLs"]
 res = []
+res_word = []
 
-# First option
-# for word in lst:
-#     word = word.lower()
-#     if len(word) <= 4 or "_" in word:
-#         res.append(word)
-#     elif word[-4:] == "item" or word[-4:] == "list":
-#         word = list(word)
-#         word.insert(-4, "_")
-#         res.append("".join(word))
-#     elif word[-5:] == "tuple":
-#         word = list(word)
-#         word.insert(-5, "_")
-#         res.append("".join(word))
-#     else:
-#         word = list(word)
-#         word.insert(-4, "_")
-#         res.append("".join(word))
-
-# Second option (optimised)
 for word in lst:
-    word = word.lower()
-    if len(word) <= 4 or "_" in word:
+    if word.islower():
         res.append(word)
-    elif word[-5:] == "tuple":
-        word = list(word)
-        word.insert(-5, "_")
-        res.append("".join(word))
     else:
-        word = list(word)
-        word.insert(-4, "_")
-        res.append("".join(word))
+        word_lst = list(word)
+        res_word.append(word_lst[0])
+        for index in range(1, len(word_lst)):
+            if word_lst[index].istitle() and word_lst[index - 1] != "_":
+                res_word.append("_")
+                res_word.append(word_lst[index])
+            else:
+                res_word.append(word_lst[index])
+    if res_word:
+        res.append("".join(res_word))
+        res_word.clear()
 
 print(res)
