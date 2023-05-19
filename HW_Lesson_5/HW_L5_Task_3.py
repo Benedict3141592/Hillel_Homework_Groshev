@@ -1,7 +1,7 @@
 import string
 
 # Open file text.txt
-with open("D:/Download/text.txt") as file:
+with open("../text.txt") as file:
     text = file.read()
 
 # Creating dictionary with alphabet and count letters
