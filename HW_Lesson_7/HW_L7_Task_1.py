@@ -9,7 +9,8 @@ def print_func(*args):
     return sys.stdout.write(f"{str(*args)}\n")
 
 
-print_func("Hello world!")
-print_func(1)
-print_func("")
-print_func()
+if __name__ == "__main__":
+    print_func("Hello world!")
+    print_func(1)
+    print_func("")
+    print_func()

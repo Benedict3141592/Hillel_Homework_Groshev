@@ -7,13 +7,14 @@ direction
 """
 
 
-def min_numbers_of_arrow(string):
+def min_numbers_of_arrow(string: str) -> int:
     dict_items = {}
     for item in string:
         dict_items[item] = string.count(item)
     return len(string) - max(dict_items.values())
 
 
-print(min_numbers_of_arrow("^vv<v"))
-print(min_numbers_of_arrow("v>>>vv"))
-print(min_numbers_of_arrow("<<<"))
+if __name__ == "__main__":
+    print(min_numbers_of_arrow("^vv<v"))
+    print(min_numbers_of_arrow("v>>>vv"))
+    print(min_numbers_of_arrow("<<<"))
