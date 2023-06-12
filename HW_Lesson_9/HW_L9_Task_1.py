@@ -7,8 +7,7 @@ class Company:
         self.__company_value = company_value
         self.__company_pin = company_pin
 
-    @property  # With this property I have message <Statement seems to have no effect and can be replaced
-    # with a function call to have effect>
+    @property
     def get_info(self):
         return (f"Company {self.company} is situated in {self.address}. "
                 f"Currently number of employees is {self.number_of_employees} "
