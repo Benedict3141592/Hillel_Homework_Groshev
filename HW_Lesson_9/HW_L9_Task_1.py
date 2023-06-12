@@ -7,12 +7,12 @@ class Company:
         self.__company_value = company_value
         self.__company_pin = company_pin
 
-    @property  # With this property i have message "Statement seems to have no effect and can be replaced
-    # with a function call to have effect"
+    @property  # With this property I have message <Statement seems to have no effect and can be replaced
+    # with a function call to have effect>
     def get_info(self):
-        print(f"Company {self.company} is situated in {self.address}. "
-              f"Currently number of employees is {self.number_of_employees} "
-              f"and the company assets are {self.__company_value} billion USD.")
+        return (f"Company {self.company} is situated in {self.address}. "
+                f"Currently number of employees is {self.number_of_employees} "
+                f"and the company assets are {self.__company_value} billion USD.")
 
     @property
     def get_company(self):
@@ -77,10 +77,10 @@ if __name__ == '__main__':
     toshiba.get_address = "Tokyo"
     toshiba.change_number_employee(777, 125777)
     toshiba.add_company_value(777, 50000)
-    toshiba.get_info
+    print(toshiba.get_info)
     toshiba.help_pin()
     toshiba.pin = 888
     toshiba.add_company_value(888, 50000)
 
     apple = Company("Apple", "California, USA", 164000, 352.76, 888)
-    apple.get_info
+    print(apple.get_info)
