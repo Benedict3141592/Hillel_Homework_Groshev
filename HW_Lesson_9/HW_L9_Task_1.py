@@ -7,23 +7,29 @@ class Company:
         self.__company_value = company_value
         self.__company_pin = company_pin
 
+    @property  # With this property i have message "Statement seems to have no effect and can be replaced
+    # with a function call to have effect"
     def get_info(self):
         print(f"Company {self.company} is situated in {self.address}. "
               f"Currently number of employees is {self.number_of_employees} "
               f"and the company assets are {self.__company_value} billion USD.")
 
+    @property
     def get_company(self):
         return self.company
 
+    @property
     def get_address(self):
         return self.address
 
-    def change_address(self, new_address):
+    @get_address.setter
+    def get_address(self, new_address):
         if isinstance(self.address, str):
             self.address = new_address
         else:
             raise TypeError("Error! Wrong format!")
 
+    @property
     def get_number_of_employee(self):
         return self.number_of_employees
 
@@ -36,6 +42,7 @@ class Company:
         else:
             print("Wrong pin code")
 
+    @property
     def get_company_value(self):
         return self.__company_value
 
@@ -65,15 +72,15 @@ class Company:
 
 if __name__ == '__main__':
     toshiba = Company("Toshiba", "Minato, Tokyo, Japan", 125648, 31800000000, 777)
-    print(toshiba.get_company())
-    print(toshiba.get_address())
-    toshiba.change_address("Tokyo")
+    print(toshiba.get_company)
+    print(toshiba.get_address)
+    toshiba.get_address = "Tokyo"
     toshiba.change_number_employee(777, 125777)
     toshiba.add_company_value(777, 50000)
-    toshiba.get_info()
+    toshiba.get_info
     toshiba.help_pin()
     toshiba.pin = 888
     toshiba.add_company_value(888, 50000)
 
     apple = Company("Apple", "California, USA", 164000, 352.76, 888)
-    apple.get_info()
+    apple.get_info

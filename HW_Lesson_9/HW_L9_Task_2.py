@@ -8,9 +8,11 @@ class Employee:
         self.__salary = salary
         self.__age = age
 
+    @property
     def get_info(self):
         return f"{self.name} is working at {self._company}."
 
+    @property
     def get_name(self):
         return self.name
 
@@ -59,8 +61,8 @@ class Employee:
 
 if __name__ == '__main__':
     Jack = Employee("Jack Sullivan", "Apple", 125000, 35)
-    print(Jack.get_info())
-    print(Jack.get_name())
+    print(Jack.get_info)
+    print(Jack.get_name)
 
     Jack.company = "Microsoft"
     print(Jack.company)
