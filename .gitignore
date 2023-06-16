@@ -1,4 +1,4 @@
 .idea
 text.txt
 HW_Lesson_1
-venv
+*.pyc
