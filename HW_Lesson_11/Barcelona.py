@@ -1,18 +1,22 @@
-from Hillel.HW_Lesson_11.I_game import Game
-from Hillel.HW_Lesson_11.I_team import Team
+from Hillel.HW_Lesson_11.I_game import IGame
+from Hillel.HW_Lesson_11.I_team import ITeam
 from random import sample, randrange
 from time import sleep
 
 
-class Barca(Team, Game):
+# Inheritance
+# Abstraction
+class Barca(ITeam, IGame):
     def __init__(self, squad_power_gk: list, squad_power_cd: list, squad_power_cm: list, squad_power_fw: list,
                  stadium: str):
         super().__init__(squad_power_gk, squad_power_cd, squad_power_cm, squad_power_fw)
+        # Hiding
         self.__power = 0
         self.__opponent_team = self.opponent_team()
         self.__opponent_power = self.opponent_power()
         self.__stadium = stadium
 
+    # Encapsulation
     @property
     def stadium(self):
         return self.__stadium
@@ -24,6 +28,7 @@ class Barca(Team, Game):
         else:
             raise TypeError("Wrong format!")
 
+    # Polymorphism
     def _check_gk(self):
         for players_power in self._squad_power_gk:
             if type(players_power) != int or players_power < 1 or players_power > 100:

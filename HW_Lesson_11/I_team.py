@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Team(ABC):
+class ITeam(ABC):
     def __init__(self, squad_power_gk: list, squad_power_cd: list, squad_power_cm: list, squad_power_fw: list):
         self._squad_power_gk = squad_power_gk
         self._squad_power_cd = squad_power_cd

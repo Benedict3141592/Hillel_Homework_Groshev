@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from random import randrange, sample
 
 
-class Game(ABC):
+class IGame(ABC):
 
     @abstractmethod
     def game(self): ...
