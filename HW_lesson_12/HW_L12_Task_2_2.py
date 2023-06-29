@@ -1,9 +1,8 @@
 from Hillel.HW_lesson_12.HW_L12_Task_2 import Train
 
 
-class Wagon(Train):
+class Wagon:
     def __init__(self, number: int):
-        super().__init__()
         self.number = number
         self.passengers = []
 
