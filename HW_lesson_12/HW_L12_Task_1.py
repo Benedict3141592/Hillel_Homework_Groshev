@@ -18,9 +18,3 @@ class Oplot:
 if __name__ == '__main__':
     tank = Oplot()
     print(tank)
-
-
-
-
-
-
