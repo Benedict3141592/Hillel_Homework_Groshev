@@ -3,3 +3,6 @@ text.txt
 HW_Lesson_1
 *.pyc
 __pycache__
+HW_Lesson_13/data.txt
+HW_Lesson_13/Proxy/data.txt
+HW_Lesson_13/Proxy/request.txt
